@@ -97,10 +97,13 @@ class _DirectorioHorizontalState extends State<DirectorioHorizontal> {
                 leading: Icon(Icons.person, color: Colors.blue),
                 title: Text("Ing. Israel Zurita"),
                 subtitle: Text("Desarrollo de Aplicaciones Web"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetalleDocente(),),);
+                },
               ),
               Divider(),
               ListTile(
-                trailing: Icon(Icons.sentiment_satisfied, color: Colors.yellow),
+                trailing: Icon(Icons.sentiment_satisfied, color: Colors.amber),
                 leading: Icon(Icons.person, color: Colors.blue),
                 title: Text("Ing. Angel Novillo"),
                 subtitle: Text("Desarrollo de Aplicaciones Web"),
@@ -205,3 +208,20 @@ class _DirectorioHorizontalState extends State<DirectorioHorizontal> {
   }
 }
 
+class DetalleDocente extends StatelessWidget {
+  const DetalleDocente({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Docente"
+        ),
+        backgroundColor: Colors.lightBlue,
+        foregroundColor: Colors.amber,
+      ),
+      body: Text("Docente 1"),
+    );
+  }
+}
